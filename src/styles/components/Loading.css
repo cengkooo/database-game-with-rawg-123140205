@@ -1,0 +1,121 @@
+/* Loading container styles */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Spinner base styles using class selector */
+.loading-spinner {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+/* Spinner size variants using modifier class */
+.loading-spinner--small {
+  width: 24px;
+  height: 24px;
+}
+
+.loading-spinner--large {
+  width: 56px;
+  height: 56px;
+}
+
+/* Spinner animation using pseudo-elements */
+.loading-spinner::before,
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-spinner::before {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 184, 212, 0.2);
+  animation-delay: -0.5s;
+}
+
+.loading-spinner::after {
+  width: 75%;
+  height: 75%;
+  background: #00b8d4;
+  top: 12.5%;
+  left: 12.5%;
+}
+
+/* Text styles using descendant selector */
+.loading-container .loading-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+/* Fullscreen overlay styles using combinators */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Loading dots animation */
+.loading-dots::after {
+  content: '';
+  animation: dots 1.5s infinite;
+}
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes dots {
+  0% { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+  100% { content: ''; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loading-container {
+    padding: 16px;
+  }
+  
+  .loading-container .loading-text {
+    font-size: 14px;
+  }
+  
+  .loading-spinner--large {
+    width: 48px;
+    height: 48px;
+  }
+}

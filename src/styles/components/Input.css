@@ -1,0 +1,99 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Label styles using element and class selector */
+label.input-label {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Base input styles */
+.input-field {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+/* Pseudo-class for focus state */
+.input-field:focus {
+  outline: none;
+  border-color: #00b8d4;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(0, 184, 212, 0.2);
+}
+
+/* Pseudo-class for hover state */
+.input-field:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Input variants using attribute selectors */
+.input-field[type="search"] {
+  padding-left: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+}
+
+/* Error state styles using combinators */
+.input-container.error .input-field {
+  border-color: #ff0000;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.input-container.error .input-label {
+  color: #ff0000;
+}
+
+/* Error message styles */
+.input-error {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Disabled state using attribute selector */
+.input-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Required field indicator using pseudo-element */
+.input-label.required::after {
+  content: "*";
+  color: #ff0000;
+  margin-left: 4px;
+}
+
+/* Icon container styles */
+.input-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .input-field {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .input-label {
+    font-size: 12px;
+  }
+}

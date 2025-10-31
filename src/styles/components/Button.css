@@ -1,0 +1,76 @@
+.button {
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 1px;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Primary Button - Filled cyan/blue */
+.button--primary {
+  background-color: #00b8d4;
+  color: white;
+  border: none;
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: #0095a8;
+  transform: translateY(-2px);
+}
+
+/* Secondary Button - Outlined */
+.button--secondary {
+  background-color: transparent;
+  color: #00b8d4;
+  border: 2px solid #00b8d4;
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: rgba(0, 184, 212, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Text Button - For navigation */
+.button--text {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+}
+
+.button--text:hover:not(:disabled) {
+  color: #00b8d4;
+}
+
+/* Small size variant */
+.button--small {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+/* Large size variant */
+.button--large {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Icon support */
+.button__icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
