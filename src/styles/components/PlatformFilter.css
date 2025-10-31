@@ -1,0 +1,91 @@
+.platform-filter {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+/* Header styles using element and class selector */
+h3.platform-filter__title {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Platform list styles */
+.platform-filter__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Platform group styles using descendant selector */
+.platform-filter .platform-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 12px;
+}
+
+/* Last child pseudo-class */
+.platform-filter .platform-group:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* Platform icon styles */
+.platform-icon {
+  width: 20px;
+  height: 20px;
+  color: #00b8d4;
+}
+
+/* Selected count badge styles */
+.platform-filter__count {
+  background: rgba(0, 184, 212, 0.2);
+  color: #00b8d4;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Reset button styles */
+.platform-filter__reset {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.platform-filter__reset:hover {
+  color: #00b8d4;
+}
+
+/* Platform group title styles */
+.platform-group__title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .platform-filter {
+    padding: 12px;
+  }
+
+  .platform-filter__list {
+    gap: 8px;
+  }
+
+  h3.platform-filter__title {
+    font-size: 16px;
+  }
+}
