@@ -1,0 +1,36 @@
+/* MainLayout Styles */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout__main {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout__content {
+  flex: 1;
+  padding: var(--spacing-xl);
+  margin-top: 60px; /* Header height */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .layout__main {
+    margin-left: 0;
+  }
+
+  .layout__content {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 640px) {
+  .layout__content {
+    padding: var(--spacing-md);
+  }
+}
