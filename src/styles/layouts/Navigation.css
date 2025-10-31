@@ -1,0 +1,147 @@
+/* Navigation Styles */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+/* Theme Variants */
+.navigation.light {
+  --bg-primary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --border-color: #e5e7eb;
+  --hover-bg: #f3f4f6;
+  --active-bg: #e5e7eb;
+}
+
+.navigation.dark {
+  --bg-primary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: #2d2d2d;
+  --hover-bg: #2d2d2d;
+  --active-bg: #404040;
+}
+
+.navigation__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 4rem;
+}
+
+.navigation__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navigation__link:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-primary);
+}
+
+.navigation__link--active {
+  background-color: var(--active-bg);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.navigation__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navigation__label {
+  font-size: 1rem;
+}
+
+.navigation__mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.5rem !important;
+  min-width: auto !important;
+}
+
+.navigation__menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navigation__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navigation {
+    transform: translateX(-100%);
+  }
+
+  .navigation--open {
+    transform: translateX(0);
+  }
+
+  .navigation__mobile-toggle {
+    display: block;
+  }
+
+  .navigation__overlay {
+    display: block;
+  }
+}
+
+/* Animation for menu items */
+.navigation__link {
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.navigation__link:hover::after,
+.navigation__link--active::after {
+  transform: translateX(0);
+}
+
+/* Hover effects for icons */
+.navigation__icon {
+  transition: transform 0.2s ease;
+}
+
+.navigation__link:hover .navigation__icon {
+  transform: scale(1.1);
+}
