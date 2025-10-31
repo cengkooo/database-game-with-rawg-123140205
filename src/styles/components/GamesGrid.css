@@ -1,0 +1,133 @@
+.games-grid {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+/* Grid layout using CSS Grid */
+@media (min-width: 640px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .games-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .games-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Controls section styles */
+.games-grid__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Sort controls styles using descendant selector */
+.games-grid__sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.games-grid__sort-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+/* Sort button styles using combinators */
+.games-grid__sort-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.games-grid__sort-button:hover {
+  background: rgba(0, 184, 212, 0.2);
+}
+
+.games-grid__sort-button.active {
+  background: #00b8d4;
+}
+
+/* Results count styles */
+.games-grid__count {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+/* Empty state styles */
+.games-grid__empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+/* Loading state styles using pseudo-elements */
+.games-grid__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  grid-column: 1 / -1;
+}
+
+/* Error state styles */
+.games-grid__error {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #ff4444;
+  padding: 24px;
+}
+
+/* Load more section styles */
+.games-grid__load-more {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.games-grid__skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 37%,
+    rgba(255, 255, 255, 0.05) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  height: 300px;
+  border-radius: 8px;
+}
